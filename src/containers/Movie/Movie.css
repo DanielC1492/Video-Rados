@@ -10,7 +10,45 @@
     display: flex;
     flex-direction: column;
     background-color: yellowgreen;
+    height: 100vh;
     width: 60vw;
+}
+
+.midLeftTop{
+    display: flex;
+    height: 70vh;
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+    background-color: darkslateblue;
+}
+
+.trailer{
+    height: 30em;
+    width: 50em;
+    background-color: darkgreen;
+}
+
+.midLeftBot{
+    height: 30vh;
+    width: 60vw;
+
+    background-color: rgb(132, 61, 139);
+}
+
+.movieTitle{
+    height: 2em;
+    background-color: rgb(48, 238, 10);
+}
+
+.ratingStars{
+    height: 2em;
+    background-color: rgb(238, 10, 10);
+}
+
+.synopsis{
+    height: 2em;
+    background-color: rgb(223, 238, 10);
 }
 
 .midRight{
@@ -18,35 +56,43 @@
     flex-direction: column;
     background-color: blueviolet;
     width: 40vw;
+    height: 100vh;
 }
 
-.midTop{
+.midRightTop{
     display: flex;
     flex-direction: row;
     background-color: brown;
-    margin-top: 3em;
-    margin-left: 6em;
+    height: 70vh;
+
 }
 
 .poster{
-    height: 10em;
-    width: 7em;
+    height: 14em;
+    width: 10em;
+    margin-left: 2em;
     background-color: darkgreen;
+    margin-bottom: 10em;
+    margin-top: 4.4em;
+    margin-right: 3em;
 }
 
 .movieInfo{
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 50vh;
+    background-color: goldenrod;
+    margin-top: 4.4em;
 }
 
-.midBot{
+.midRightBot{
     background-color: darkcyan;
     height: 30vh;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .rentButton{
-    margin-right: 4em;
+    margin-top: 2em;
+    margin-left: 2em;
 }

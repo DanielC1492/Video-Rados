@@ -12,22 +12,27 @@ const Movie = () => {
     return (
         <div className='movieContainer'>
             <div className='midLeft'>
-                <div className='trailer'></div>
-                <div className='movieTitle'></div>
-                <div className='ratingStars'></div>
-                <div className='synopsis'></div>
+                <div className='midLeftTop'>
+                    <div className='trailer'>TRAILER</div>
+                </div>  
+                <div className='midLeftBot'>
+                    <div className='movieTitle'>Titulo pelicula</div>
+                    <div className='ratingStars'>estrellitas de votar</div>
+                    <div className='synopsis'>sinopsis</div>
+                </div>  
             </div>
             <div className='midRight'>
-                <div className='midTop'>
-                    <div className='movieInfo'>
-                        <div className='movieName'>Federico y el trono del metal</div>
-                        <div className='genre'>Suspense,Policiaca</div>
-                        <div className='director'>Federico Baez Morandi</div>
-                    </div>
+                <div className='midRightTop'>
+                    
                     <div className='poster'></div>
+                    <div className='movieInfo'>
+                        <div className='movieName'>Nombre:Federico y el trono del metal</div>
+                        <div className='genre'>Géneros:Suspense,Policiaca</div>
+                        <div className='director'>Director:Federico Baez Morandi</div>
+                    </div>
                     
                 </div>
-                <div className='midBot'>
+                <div className='midRightBot'>
                     <div className='rentButton'><MyButton/></div>
                 </div>
             </div>

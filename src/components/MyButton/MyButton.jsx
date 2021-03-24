@@ -15,7 +15,7 @@ const MyButton = (props) => {
 
     return (
         <div onClick={() => redirectMe()} className='buttonStyle'>
-        
+        Alquilar
         </div>
     )
 }
