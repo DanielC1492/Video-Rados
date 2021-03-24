@@ -1,0 +1,52 @@
+.movieContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: turquoise;
+    height: 100vh;
+    width: 100vw;
+}
+
+.midLeft{
+    display: flex;
+    flex-direction: column;
+    background-color: yellowgreen;
+    width: 60vw;
+}
+
+.midRight{
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    width: 40vw;
+}
+
+.midTop{
+    display: flex;
+    flex-direction: row;
+    background-color: brown;
+    margin-top: 3em;
+    margin-left: 6em;
+}
+
+.poster{
+    height: 10em;
+    width: 7em;
+    background-color: darkgreen;
+}
+
+.movieInfo{
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.midBot{
+    background-color: darkcyan;
+    height: 30vh;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rentButton{
+    margin-right: 4em;
+}

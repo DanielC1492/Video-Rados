@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 
 const MyButton = (props) => {
 
-     const history = useHistory();
+     let history = useHistory();
 
      const redirectMe = () => {
          history.push(`/${props.destination}`)
