@@ -6,7 +6,7 @@ const Header = () => {
 
     return(
         <div className="header">
-            <div className="left a">
+            <div className="left">
                 <div className="logo">
                     <p>VIDEO RADOS</p>
                 </div>
@@ -16,11 +16,11 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="center a">
+            <div className="center">
                 <input type="search" className="search" placeholder="Buscar..." />
             </div>
 
-            <div className="right a">
+            <div className="right">
                 <MyButton nombre="Entrar"/>
                 <MyButton nombre="Registrarse"/>
             </div>
