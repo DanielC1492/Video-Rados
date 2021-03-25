@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './MyButton.css';
 import {useHistory} from 'react-router-dom';
@@ -11,15 +10,11 @@ const MyButton = (props) => {
          history.push(`/${props.destination}`)
      }
 
-
-
     return (
         <div onClick={() => redirectMe()} className='buttonStyle'>
-        Alquilar
+            {props.nombre}
         </div>
-    )
-}
-
+    );
+};
 
 export default MyButton;
-
