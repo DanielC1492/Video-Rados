@@ -21,8 +21,8 @@ const Header = () => {
             </div>
 
             <div className="right a">
-                <MyButton />
-                <MyButton />
+                <MyButton nombre="Entrar"/>
+                <MyButton nombre="Registrarse"/>
             </div>
         </div>
     );
