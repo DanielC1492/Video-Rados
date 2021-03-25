@@ -1,7 +1,13 @@
 .buttonStyle{
+<<<<<<< Updated upstream
     height: 2em;
     width: 5em;
     background-color: rgba(253,255,60,255);
     margin: 0.5em;
     text-align: center;
+=======
+    height: 5em;
+    width: 20em;
+    background-color: yellow;
+>>>>>>> Stashed changes
 }

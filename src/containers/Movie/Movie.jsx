@@ -1,7 +1,10 @@
 import React from 'react';
 import './Movie.css';
 import {useHistory} from 'react-router-dom';
+import 'antd/dist/antd.css';
 import MyButton from '../../components/MyButton/MyButton';
+import { Rate } from 'antd';
+
 
 
 const Movie = () => {
@@ -16,9 +19,27 @@ const Movie = () => {
                     <div className='trailer'>TRAILER</div>
                 </div>  
                 <div className='midLeftBot'>
-                    <div className='movieTitle'>Titulo pelicula</div>
-                    <div className='ratingStars'>estrellitas de votar</div>
-                    <div className='synopsis'>sinopsis</div>
+                    <div className='title'>
+                        <div className='empty'></div>
+                        <div className='movieTitle'>Titulo pelicula</div>
+
+                    </div>
+                    
+                    <div className='ratingDuration'>
+                        <div className='empty'></div>
+                        <div className='ratingStars'><Rate allowHalf disabled defaultValue={2.5} /></div>
+                        <div className='duration'>Duración: 120min</div>
+                    </div>
+                    <div className='synopsisMain'>
+                        <div className='empty'></div>
+                        <div className='synopsis'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        In magnam suscipit, at id facere quasi ducimus porro expedita soluta quia asperiores maxime molestias maiores iste facilis enim reiciendis,
+                        culpa consequuntur!<br></br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>
+                        Excepturi animi est ipsa eos earum atque tenetur perspiciatis temporibus ad fugiat iure laborum ullam,<br></br>
+                        error quos magni sapiente maxime nobis consequuntur?
+                        </div>
+                    </div>
                 </div>  
             </div>
             <div className='midRight'>
