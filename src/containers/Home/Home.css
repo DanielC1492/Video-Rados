@@ -1,5 +1,11 @@
 .homeDiv{
     height: 100vh;
     width: 100vw;
-    background-color: rgb(71, 187, 255);
+    background-color: rgba(24,4,255,255);
 }
+
+/*
+ azul oscuro: rgba(49,30,181,255)
+amarillo: rgba(253,255,60,255)
+azul claro: rgba(24,4,255,255)
+ */
