@@ -18,13 +18,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     color: rgba(253,255,60,255);
 }
 
 .logo {
+    height: 1.5em;
     font-weight: bold;
     font-size: 3em;
     font-family: 'Fredoka One', cursive;
+}
+
+.genres {
+
 }
 
 .center { /* div central */
