@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     color: rgba(253,255,60,255);
+    margin-top: 1em;
 }
 
 .rightF { /*div con el contador y la fecha, parte derecha footer */
