@@ -16,3 +16,7 @@
     z-index:99999999;
     opacity:1;
 }
+
+.loadingContainer img {
+    max-width:100%;
+}

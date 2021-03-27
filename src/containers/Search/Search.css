@@ -1,0 +1,53 @@
+.searchDiv{
+    flex: 1 1 auto;
+    padding: 1.5em;
+    background-color: rgba(24,4,255,255);
+}
+
+.searchResults {
+    height: calc(100vh - 14em);
+    position:relative;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    background-color: rgb(35,0,133);
+    padding:1em;
+}
+
+.searchResults .posterDiv {
+    margin: .5em;
+}
+
+.loadMore {
+    position: relative;
+    width: 12.5em;
+    height: 19em;
+    margin: .5em;
+    border: solid 1px #FFF503;
+    color:#FFF503;
+    padding-top:8em;
+    cursor:pointer;
+}
+
+.loadMore.np0 {
+    display:none;
+}
+
+.searchDiv h4 {
+    color: #FFF503;
+    text-align:left;
+    margin-top:1em;
+}
+
+.searchDiv .spacer {
+    height:4em;
+}
+
+/*
+azul oscuro: rgba(35,0,133,255);
+amarillo: rgba(253,255,60,255);
+azul claro: rgba(24,4,255,255):
+ */
