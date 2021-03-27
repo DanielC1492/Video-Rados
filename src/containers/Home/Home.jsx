@@ -3,7 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MovieCarousel from '../../components/MovieCarousel/MovieCarousel';
 import './Home.css'
-import gif from '../../img/announcement.gif';
+import gif from '../../img/announcement-v2.gif';
 
 const Home = () => {
     return (
