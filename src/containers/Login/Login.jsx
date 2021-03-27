@@ -9,6 +9,10 @@ const Login = () => {
 
     let history = useHistory();
 
+    const direccioname = () => {
+        history.push(`/`);
+    };
+
     return (
         <>
         <Header/>
@@ -16,7 +20,7 @@ const Login = () => {
             <div className="formLogin">
                 <p className="input">Email:</p> <input className='emailInput' placeholder='Correo electrónico' type='email' name='email' title='email' lenght='30'/>
                 <p className="input">Contraseña:</p> <input className='pwdInput' placeholder='Contraseña' type='password' name='password' title='password' lenght='30'/>
-                <MyButton nombre="Entrar"/>
+                <MyButton nombre="Entrar" destino=""/>
             </div>
         </div>
         <Footer/>
