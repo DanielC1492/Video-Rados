@@ -1,0 +1,48 @@
+.profileContainer {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.profile {
+  height: 100%;
+  flex: 1 1 auto;
+  background-color: rgb(24,4,255);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile .card {
+    background-color: #cecece;
+    width:36em;
+    height:21em;
+    border-radius: 1em;
+}
+
+.card .cardData {
+    margin:2.3em 0 0 3em;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardData .data {
+    text-align: left;
+    margin-left: 2em;
+}
+
+.cardData .cardPic {
+    background-color: rgb(235, 235, 235);
+    padding: 1.5em 0 1em 0;
+}
+
+.cardData .datum {
+    margin-bottom: .7em;
+}
+
+.cardNumber {
+    margin-top:1.6em;
+    font-size: 1.2em;
+}

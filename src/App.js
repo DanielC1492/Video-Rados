@@ -3,6 +3,7 @@ import './App.css';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Movie from './containers/Movie/Movie';
+import Profile from './containers/Profile/Profile';
 import Search from './containers/Search/Search';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path='/search/:query' exact component={Search}/>
           <Route path='/genre/:genre' exact component={Search}/>
           <Route path='/login' exact component={Login}/>
+          <Route path='/profile' exact component={Profile}/>
         </Switch>
       
       </BrowserRouter>
