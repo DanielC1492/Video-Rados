@@ -8,7 +8,6 @@
 .midLeft{
     display: flex;
     flex-direction: column;
-    /* background-color: yellowgreen; */
     height: 100vh;
     width: 60vw;
 }
@@ -19,25 +18,30 @@
     width: 60vw;
     align-items: center;
     justify-content: center;
-    /* background-color: darkslateblue; */
 }
 
 .trailer{
     height: 30em;
     width: 50em;
     background-color: rgb(1, 15, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.trailer img{
+    width: 15em;
 }
 
 .midLeftBot{
     height: 30vh;
     width: 60vw;
-    /* background-color: rgb(132, 61, 139); */
 }
 
 .title{
     height: 2em;
     width: 60vw;
-    /* background-color: rgb(142, 151, 142); */
     display: flex;
     flex-direction: row;
 }
@@ -53,6 +57,7 @@
     display: flex;
     flex-direction: row;
     height: 2em;
+    align-items: center;
 }
 
 .empty{
@@ -64,17 +69,15 @@
     display: flex;
     flex-direction: row;
     height: 2em;
-    /* background-color: rgb(238, 10, 10); */
     color: white;
-    width: 10vw;
+    width: 20vw;
     text-align: left;
     margin-bottom: 1em;
 }
 
-.duration{
+.price{
     height: 2em;
-    width: 50vw;
-    
+    width: 30vw;
     text-align: center;
     color: white;
 }
@@ -82,7 +85,6 @@
 .synopsisMain{
     height: 2em;
     width: 60vw;
-    /* background-color: rgb(142, 151, 142); */
     display: flex;
     flex-direction: row;
     margin-top: 1em;
@@ -92,15 +94,14 @@
 .synopsis{
     height: 12em;
     width: 60vw;
-    /* background-color: rgb(223, 238, 10); */
     text-align: left;
     color: white;
+    font-size: larger;
 }
 
 .midRight{
     display: flex;
     flex-direction: column;
-    /* background-color: blueviolet; */
     width: 40vw;
     height: 100vh;
 }
@@ -108,7 +109,6 @@
 .midRightTop{
     display: flex;
     flex-direction: row;
-    /* background-color: brown; */
     height: 60vh;
 }
 
@@ -116,10 +116,16 @@
     height: 14em;
     width: 10em;
     margin-left: 2em;
-    background-color: rgb(0, 0, 0);
     margin-bottom: 10em;
-    margin-top: 4.4em;
+    margin-top: 5em;
     margin-right: 3em;
+}
+
+.posterImg{
+    height: 14em;
+    width: 10em;
+    margin-top:4.9em;
+
 }
 
 .movieInfo{
@@ -127,7 +133,7 @@
     flex-direction: column;
     height: 20vh;
     color: white;
-    margin-top: 4.4em;
+    margin-top: 10em;
 }
 
 .movieName{
@@ -138,12 +144,11 @@
     text-align: left;
 }
 
-.director{
+.year{
     text-align: left;
 }
 
 .midRightBot{
-    /* background-color: darkcyan; */
     height: 30vh;
     display: flex;
     flex-direction: row;
