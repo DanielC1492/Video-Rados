@@ -1,6 +1,6 @@
 .homeDiv{
     flex: 0 1 auto;
-    padding: 1.5em;
+    padding: 0 1.5em;
     background-color: rgba(24,4,255,255);
 }
 
@@ -10,8 +10,35 @@
     margin-top:2em;
 }
 
+.homeDiv h3 {
+    color: #FFF503;
+    margin-top:2em;
+    margin-bottom:-.5em;
+}
+
 .homeDiv .spacer {
     height:4em;
+}
+
+.banner {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fcfefc;
+    margin:0 -1.5em;
+}
+
+.banner a {
+    font-weight:bold;
+}
+
+.banner .gif {
+    width:5.5em;
+    height:4em;
+}
+
+.banner .gif img {
+    width:100%;
 }
 
 /*
