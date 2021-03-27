@@ -1,7 +1,8 @@
 .buttonStyle{
-    height: 2em;
-    width: 5em;
+    padding: .3em 1em;
     background-color: rgba(253,255,60,255);
     margin: 0.5em;
     text-align: center;
+    user-select: none;
+    cursor:pointer;
 }

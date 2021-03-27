@@ -27,6 +27,8 @@
     font-weight: bold;
     font-size: 3em;
     font-family: 'Fredoka One', cursive;
+    cursor:pointer;
+    user-select: none;
 }
 
 .genres {

@@ -6,12 +6,23 @@ import './Home.css'
 
 const Home = () => {
     return (
+        <>
+        <Header/>
         <div className='homeDiv'>
-            <Header/>
-            Vista home del maravilloso mundo de RADOS
+            
+            <h4>Mejor valoradas</h4>
             <MovieCarousel query='toprated=true'/>
-            <Footer />
+            <h4>Más populares</h4>
+            <MovieCarousel query='popular=true'/>
+            <h4>Comedia</h4>
+            <MovieCarousel query='genre=Comedia'/>
+            <h4>Drama</h4>
+            <MovieCarousel query='genre=Drama'/>
+            <div className="spacer"></div>
+            
         </div>
+        <Footer />
+        </>
     );
 };
 

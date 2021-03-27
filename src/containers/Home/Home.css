@@ -1,7 +1,17 @@
 .homeDiv{
-    height: 100vh;
-    width: 100vw;
+    flex: 0 1 auto;
+    padding: 1.5em;
     background-color: rgba(24,4,255,255);
+}
+
+.homeDiv h4 {
+    color: #FFF503;
+    text-align:left;
+    margin-top:2em;
+}
+
+.homeDiv .spacer {
+    height:4em;
 }
 
 /*

@@ -1,13 +1,20 @@
 import React from "react";
 import "./Header.css";
 import MyButton from "../MyButton/MyButton";
+import {useHistory} from 'react-router-dom';
 
 const Header = () => {
+
+    let history = useHistory();
+
+    const goHome = () => {
+        history.push('/')
+    }
 
     return(
         <div className="header">
             <div className="left">
-                <div className="logo">
+                <div className="logo" onClick={goHome}>
                     <p>VIDEO RADOS</p>
                 </div>
 
