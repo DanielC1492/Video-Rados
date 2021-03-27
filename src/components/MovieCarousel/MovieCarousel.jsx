@@ -1,11 +1,15 @@
-
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect,} from 'react';
+import { useHistory } from 'react-router-dom';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import Loading from '../Loading/Loading';
 import './MovieCarousel.css';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { SAVE_MOVIE } from '../../redux/types/movieTypes';
 
 const MovieCarousel = (props) => {
+    
+    const history = useHistory()
 
     const [loading,setLoading] = useState(true);
     const [movies,setMovies] = useState([]);
@@ -25,7 +29,8 @@ const MovieCarousel = (props) => {
     }
 
     const clickHandler = (i)=>{
-        console.log(movies[i]);
+        props.dispatch({type : SAVE_MOVIE, payload : movies[i] });
+        history.push('/movie')
     }
 
     return (
@@ -40,5 +45,6 @@ const MovieCarousel = (props) => {
 }
 
 
-export default MovieCarousel
+export default connect() (MovieCarousel) ;
+
 

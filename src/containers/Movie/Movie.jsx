@@ -1,19 +1,20 @@
 import React from 'react';
 import './Movie.css';
-import {useHistory} from 'react-router-dom';
 import 'antd/dist/antd.css';
 import MyButton from '../../components/MyButton/MyButton';
 import { Rate } from 'antd';
+import { connect } from 'react-redux';
+import Header from '../../components/Header/Header';
 
 
 
-const Movie = () => {
-
-    //  const history = useHistory();
-
+const Movie = (props) => {
 
     return (
+        <>
+        <Header/>
         <div className='movieContainer'>
+            
             <div className='midLeft'>
                 <div className='midLeftTop'>
                     <div className='trailer'>TRAILER</div>
@@ -21,7 +22,7 @@ const Movie = () => {
                 <div className='midLeftBot'>
                     <div className='title'>
                         <div className='empty'></div>
-                        <div className='movieTitle'>Titulo pelicula</div>
+                        <div className='movieTitle'>{props.movie.title}</div>
 
                     </div>
                     
@@ -63,8 +64,9 @@ const Movie = () => {
            
             
         </div>
+        </>
     )
 }
 
-export default Movie
+export default connect((state) => ({movie : state.movieReducer})) (Movie);
 
