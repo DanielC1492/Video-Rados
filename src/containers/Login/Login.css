@@ -1,0 +1,31 @@
+.login {
+    background-color: rgba(24,4,255,255);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.formLogin {
+    width: 25m;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input {
+    color: #FFF503;
+}
+
+.emailInput {
+    width: 20em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.pwdInput {
+    width: 20em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}

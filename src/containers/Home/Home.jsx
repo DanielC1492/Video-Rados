@@ -12,7 +12,7 @@ const Home = () => {
         <div className='homeDiv'>
             <div className="banner">
                 <div className="gif"><img src={gif} alt='Anuncio'/></div>
-                <div className="text"><b>¡Atención! Mañana 28/12/1990</b> - Proyección en exclusiva del estreno <b>"Solo en Casa"</b> en nuestro establecimiento de la calle Emilio Baró en Benimaclet. - <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Apúntate aquí</a></div>
+                <div className="text"><b>¡Atención! Mañana 28/12/2002</b> - Proyección en exclusiva del estreno <b>"Solo en Casa"</b> en nuestro establecimiento de la calle Emilio Baró en Benimaclet. - <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Apúntate aquí</a></div>
             </div>
             
             <h3>Elige una película y prueba ahora nuestro innovador sistema de visionado en línea</h3>
