@@ -20,7 +20,7 @@ const Footer = () => {
                     <div className="n5 numbers">0</div>
                 </div>
                 <div className="date">
-                    <p>27 de Diciembre de 1990 10:15h</p>
+                    <p>27 de Diciembre de 2002 10:15h</p>
                 </div>
             </div>
         </div>

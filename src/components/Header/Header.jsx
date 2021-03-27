@@ -46,7 +46,7 @@ const Header = () => {
             </div>
 
             <div className="right">
-                <MyButton nombre="Entrar"/>
+                <MyButton nombre="Entrar" destination="login"/>
                 <MyButton nombre="Registrarse"/>
             </div>
         </div>
