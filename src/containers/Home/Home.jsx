@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-import MoviePoster from '../../components/MoviePoster/MoviePoster'
+import MovieCarousel from '../../components/MovieCarousel/MovieCarousel';
 import './Home.css'
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
         <div className='homeDiv'>
             <Header/>
             Vista home del maravilloso mundo de RADOS
-            <MoviePoster/>
+            <MovieCarousel query='toprated=true'/>
             <Footer />
         </div>
     );
