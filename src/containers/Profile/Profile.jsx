@@ -34,7 +34,7 @@ const Profile = (props) => {
                             <div className="datum">Email: {props.user.email}</div>
                         </div>
                     </div>
-                    <div className="cardNumber">MIEMBRO Nº: {props.user.id?.toUpperCase()}</div>
+                    <div className="cardNumber">MIEMBRO Nº: {props.user._id?.toUpperCase()}</div>
                 </div>
             </div>
         </section>

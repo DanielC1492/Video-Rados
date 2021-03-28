@@ -10,8 +10,11 @@ const MyButton = (props) => {
          history.push(`/${props.destination}`)
      }
 
+     let onClick = () => redirectMe();
+     if (props.action) onClick = props.action;
+
     return (
-        <div onClick={() => redirectMe()} className='buttonStyle'>
+        <div onClick={onClick} className='buttonStyle'>
             {props.nombre}
         </div>
     );
