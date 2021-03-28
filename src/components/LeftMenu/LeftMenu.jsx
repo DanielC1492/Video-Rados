@@ -50,7 +50,7 @@ const LeftMenu = (props) => {
         }
         routes = {
             profile: '/admin',
-            myappointments: '/admin/all-rentals'
+            myrentals: '/admin/all-rentals'
         }
     }
 

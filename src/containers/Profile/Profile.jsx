@@ -17,7 +17,7 @@ const Profile = (props) => {
 
     let history = useHistory();
 
-    //if(!user.user?.id) history.push('/login');
+    if(!props.user?._id) history.push('/login');
 
     return (
         <>

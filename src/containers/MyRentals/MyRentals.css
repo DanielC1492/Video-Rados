@@ -1,0 +1,50 @@
+.rentalsContainer {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.rentals {
+    position: relative;
+    height: 100%;
+    flex: 1 1 auto;
+    background-color: rgb(24,4,255);
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding:2em;
+    overflow-y: auto;
+}
+
+.rentals .card {
+    margin-bottom:1em;
+    background-color: rgb(35,0,133);
+    width:100%;
+    max-width:80em;
+    padding:1em;
+}
+
+.rentals .posterDiv {
+    width: 7.5em;
+    height: 11.4em;
+}
+
+.rentals .card .cardData {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rentals .cardData .data {
+    text-align: left;
+    margin-left: 2em;
+    width:30%;
+    color:#FFF;
+}
+
+.rentals .cardData .datum {
+    margin-bottom: .7em;
+}

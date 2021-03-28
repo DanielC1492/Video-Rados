@@ -21,28 +21,28 @@
     border-radius: 1em;
 }
 
-.card .cardData {
+.profile .card .cardData {
     margin:2.3em 0 0 3em;
     display:flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.cardData .data {
+.profile .cardData .data {
     text-align: left;
     margin-left: 2em;
 }
 
-.cardData .cardPic {
+.profile .cardData .cardPic {
     background-color: rgb(235, 235, 235);
     padding: 1.5em 0 1em 0;
 }
 
-.cardData .datum {
+.profile .cardData .datum {
     margin-bottom: .7em;
 }
 
-.cardNumber {
+.profile .cardNumber {
     margin-top:1.6em;
     font-size: 1.2em;
 }

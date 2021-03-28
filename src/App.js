@@ -3,6 +3,7 @@ import './App.css';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Movie from './containers/Movie/Movie';
+import MyRentals from './containers/MyRentals/MyRentals';
 import Profile from './containers/Profile/Profile';
 import Search from './containers/Search/Search';
 
@@ -17,6 +18,9 @@ function App() {
           <Route path='/genre/:genre' exact component={Search}/>
           <Route path='/login' exact component={Login}/>
           <Route path='/profile' exact component={Profile}/>
+          <Route path='/profile/my-rentals' exact component={MyRentals}/>
+          <Route path='/admin' exact component={Profile}/>
+          <Route path='/admin/all-rentals' exact component={MyRentals}/>
         </Switch>
       
       </BrowserRouter>
