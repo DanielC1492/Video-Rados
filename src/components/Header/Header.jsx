@@ -47,7 +47,7 @@ const Header = () => {
 
             <div className="right">
                 <MyButton nombre="Entrar" destination="login"/>
-                <MyButton nombre="Registrarse"/>
+                <MyButton nombre="Registrarse" destination="register"/>
             </div>
         </div>
     );
