@@ -16,6 +16,10 @@ const LeftMenu = (props) => {
         history.push(goto);
     }
 
+    const hideMenu = () => {
+
+    }
+
     const logout = () => {
         props.dispatch({type:LOGOUT})
         history.push('/');
