@@ -1,0 +1,52 @@
+.register {
+    background-color: rgba(24,4,255,255);
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    align-items: center;
+}
+
+.registerForm {
+    width: 18em;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.inputReg {
+    color: #FFF503;
+    text-align: left;
+    margin-bottom: -0.1em;
+}
+
+.nameInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.surnameInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.emailInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.pwdInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.btnReg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18em;
+}
