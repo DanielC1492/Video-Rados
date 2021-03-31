@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {LOGOUT} from '../../redux/types/userTypes';
 
 import './LeftMenu.css'
+import { DONE } from '../../redux/types/orderTypes';
 
 
 const LeftMenu = (props) => {
@@ -21,6 +22,7 @@ const LeftMenu = (props) => {
     }
 
     const logout = () => {
+        props.dispatch({type:DONE});
         props.dispatch({type:LOGOUT})
         history.push('/');
     }

@@ -8,6 +8,7 @@ import Loading from '../../components/Loading/Loading';
 import axios from 'axios';
 import MoviePoster from '../../components/MoviePoster/MoviePoster';
 import MyButton from '../../components/MyButton/MyButton';
+import { SAVE_MOVIE } from '../../redux/types/movieTypes';
 
 
 const MyRentals = (props) => {
@@ -55,7 +56,8 @@ const MyRentals = (props) => {
     }
     
     const rentAgain = (i)=>{
-        //placeholder para guardar movie en redux e ir a hacer pedido
+        props.dispatch({type:SAVE_MOVIE,payload:rentals[i].items[0]?.film});
+        history.push('/order');
     }
 
     const now = new Date;

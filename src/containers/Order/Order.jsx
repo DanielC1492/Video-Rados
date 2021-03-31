@@ -6,6 +6,7 @@ import MyButton from '../../components/MyButton/MyButton';
 import './Order.css';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
+import { DONE } from '../../redux/types/orderTypes';
 
 
 
@@ -39,7 +40,7 @@ function Order(props) {
 
     const handleResponse = (response) => {
         if (response.status == 200) {
-            
+                props.dispatch({type:DONE});
                 history.push('profile/my-rentals');
             
         } else {
