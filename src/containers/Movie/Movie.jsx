@@ -1,16 +1,28 @@
 import React from 'react';
 import './Movie.css';
 import 'antd/dist/antd.css';
+import { useHistory } from 'react-router-dom';
 import MyButton from '../../components/MyButton/MyButton';
 import { Rate } from 'antd';
 import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import MoviePoster from '../../components/MoviePoster/MoviePoster';
 import playButton from '../../img/playButton.png';
+import {ORDER} from '../../redux/types/orderTypes';
 
 
 
 const Movie = (props) => {
+        const history = useHistory();
+    const order = () => {
+
+        props.dispatch({type:ORDER});
+
+        if(props.user.user?._id) history.push('/order');
+        else history.push('/login');
+        
+
+    }
 
     return (
         <>
@@ -55,7 +67,7 @@ const Movie = (props) => {
                     
                 </div>
                 <div className='midRightBot'>
-                    <div className='rentButton'><MyButton/></div>
+                    <div className='rentButton'><MyButton nombre='ALQUILAR' action={order}/></div>
                 </div>
             </div>
             
@@ -68,5 +80,5 @@ const Movie = (props) => {
     )
 }
 
-export default connect((state) => ({movie : state.movieReducer})) (Movie);
+export default connect((state) => ({movie : state.movieReducer, user:state.userReducer})) (Movie);
 

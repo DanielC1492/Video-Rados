@@ -75,7 +75,7 @@ const LeftMenu = (props) => {
                 <div className="LMItemTitle">Cerrar sesión</div>
             </div>
         </div>
-        <div className={classes.under} onClick={()=>{hideMenu();}}></div>
+        <div className={classes.under} /*onClick={()=>{hideMenu();}}*/></div>
         </>
     )
 }

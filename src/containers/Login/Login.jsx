@@ -10,7 +10,7 @@ import Loading from "../../components/Loading/Loading";
 import axios from 'axios';
 
 const Login = (props) => {
-
+    console.log(props.order, 'HOLIWIIIIIIII');
     let history = useHistory();
     
     const cred = props.user;
@@ -40,7 +40,8 @@ const Login = (props) => {
     const handleResponse = (response) => {
         if (response.status == 200) {
             props.dispatch({type:LOGIN,payload:response.data});
-            if (response.data.user.role == 'Admin') history.push('/admin');
+            if (props.order) history.push('/order');
+            else if (response.data.user.role == 'Admin') history.push('/admin');
             else history.push('/profile');
         } else {
             setLoading(false);
@@ -66,4 +67,4 @@ const Login = (props) => {
     
 };
 
-export default connect(state=>({user:state.userReducer}))(Login);
+export default connect(state=>({user:state.userReducer, order:state.orderReducer}))(Login);

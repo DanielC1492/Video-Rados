@@ -1,0 +1,140 @@
+.orderContainer{
+    background-color: rgba(24,4,255,255);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top{
+    margin-top: 2em;
+    height: 16em;
+    width: 75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(80, 147, 228);
+}
+
+.topLeft{
+    height: 14em;
+    width: 10em;
+    background-color: brown;
+}
+
+.topMid{
+    height: 15em;
+    width: 45em;
+    margin-left: 1em;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.infoText{
+    height: 10em;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-size: larger;
+}
+
+.movieName{
+    height: 2em;
+    text-align: center;
+}
+
+.orderPrice{
+    height: 2em;
+    text-align: center;
+}
+
+.rentalTime{
+    height: 2em;
+    text-align: center;
+}
+
+.topRight{
+    height: 10em;
+    width: 15em;
+    background-color: rgba(255, 1, 1, 0);
+}
+
+.gif{
+    height: 10em;
+    width: 15em;
+}
+
+.mid{
+    height: 30em;
+    width: 60em;
+    background-color:rgb(80, 147, 228);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.headerPayment{
+    height: 5em;
+    width: 60em;
+    background-color: rgb(169, 184, 233);
+    
+}
+.cardDiv{
+    display: flex;
+    flex-direction: column;
+    height: 10em;
+    
+}
+.cardNumber{
+    width: 35em;
+}
+
+.expirationCVV{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.expiration{
+    width: 15em;
+}
+
+.CVVDiv{
+    margin-left: 5em;
+    height: 10em;
+}
+
+.CVV{
+    width: 15em;
+    
+}
+
+
+.fullName{
+    width: 35em;
+}
+
+
+.bot{
+    height: 12em;
+    width: 20em;
+    background-color: rgb(169, 184, 233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payText{
+    font-size: larger;
+}

@@ -4,6 +4,7 @@ import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Movie from './containers/Movie/Movie';
 import MyRentals from './containers/MyRentals/MyRentals';
+import Order from './containers/Order/Order';
 import Profile from './containers/Profile/Profile';
 import Register from './containers/Register/Register';
 import Search from './containers/Search/Search';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/admin' exact component={Profile}/>
           <Route path='/admin/all-rentals' exact component={MyRentals}/>
           <Route path='/register' exact component={Register}/>
+          <Route path='/order' exact component={Order}/>
         </Switch>
       
       </BrowserRouter>
