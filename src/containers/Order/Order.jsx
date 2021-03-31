@@ -1,22 +1,59 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Header from '../../components/Header/Header'
-import MyButton from '../../components/MyButton/MyButton'
-import './Order.css'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import MyButton from '../../components/MyButton/MyButton';
+import './Order.css';
+import axios from 'axios';
+import Loading from '../../components/Loading/Loading';
 
 
 
 function Order(props) {
 
+    const history = useHistory();
     const now = new Date();
     const end = new Date();
     end.setDate(end.getDate() + 1);
     let nowString = `${now.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${now.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
     let endString = `${end.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${end.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
+
+    const [loading, setLoading] = useState(false);
+    
+    const submit = async () => {
+        setLoading(true);
+        const body = {items: [{
+            film: props.movie.id,
+            rental: true,
+            rentalDuration: 1
+        }]}
+        setTimeout(()=>{
+            axios.post(`http://video-rados-b.herokuapp.com/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
+            .then(handleResponse)
+            .catch((err)=>{
+                setLoading(false);
+                console.log(err.message)
+            });
+        },500);
+    }
+
+    const handleResponse = (response) => {
+        if (response.status == 200) {
+            
+                history.push('profile/my-rentals');
+            
+        } else {
+            setLoading(false);
+            console.log(response.data.message);
+        }
+    }
+
+
     return (
         <>
         <Header/>
         <div className='orderContainer'>
+            <Loading visible={loading} />
             <div className='top'>
                 <div className='topLeft'><img className='topLeft' src={props.movie.poster_path_hd} alt={props.movie.poster_path}></img></div>
                 <div className='topMid'>
@@ -52,7 +89,7 @@ function Order(props) {
                 </div>
             </div>
             
-            <MyButton nombre='PAGAR'/>
+            <MyButton nombre='PAGAR' action={submit}/>
 
         </div>
 
