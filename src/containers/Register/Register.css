@@ -8,15 +8,17 @@
 }
 
 .registerForm {
-    width: 18em;
+    width: 30em;
     display: flex;
     flex-direction: column; 
     justify-content: center;
+    align-items: center;
 }
 
 .inputReg {
     color: #FFF503;
     text-align: left;
+    width: 18em;
     margin-bottom: -0.1em;
 }
 
@@ -46,7 +48,13 @@
 
 .btnReg {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 18em;
+    width: 100%;
+}
+
+.errorMessage {
+    color: rgb(255, 166, 0);
+    font-weight: bold;
 }

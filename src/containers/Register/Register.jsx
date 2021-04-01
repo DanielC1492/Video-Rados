@@ -1,89 +1,126 @@
 import React, { useState } from "react";
 import "./Register.css";
-import { useHistory } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-// import MyButton from "../../components/MyButton/MyButton";
-import axios from 'axios';
-import { REGISTER } from '../../redux/types/userTypes';
-import { connect } from 'react-redux';
-import  checkError  from '../../Utils/Utils';
+import { useHistory } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import MyButton from "../../components/MyButton/MyButton";
+import axios from "axios";
+import { LOGIN } from "../../redux/types/userTypes";
+import { connect } from "react-redux";
+import checkError from "../../Utils/Utils";
+import Loading from "../../components/Loading/Loading";
 
 
 
 const Register = (props) => {
+  let history = useHistory();
+  const [loading, setLoading] = useState(false);
 
-    let history = useHistory();
+  const [dataRegister, setRegister] = useState({
+    name: "",
+    lastname: "",
+    email: "",
+    password: "",
+  });
 
-    const [dataRegister, setRegister] = useState({
-        name: '',
-        surname: '',
-        email: '',
-        password: ''
+  const [message, setMessage] = useState("");
+
+  const handleState = (event) => {
+    setRegister({
+      ...dataRegister,
+      [event.target.name]: event.target.value,
     });
+  };
 
-    const [message,setMessage] = useState('');
+  const handleResponse = (response) => {
 
-    const handleState = (event) => {
-        setRegister({
-            ...dataRegister,
-            [event.target.name]:
-            event.target.type === "number"
-            ? +event.target.value
-            : event.target.value,
-        });
+    props.dispatch({ type: LOGIN, payload: response.data });
+    
+    if (props.order) history.push("/order");
+    else history.push("/profile");
+  };
+
+  const registrame = async () => {
+      setLoading(true);
+    const body = {
+      name: dataRegister.name,
+      lastname: dataRegister.lastname,
+      email: dataRegister.email,
+      password: dataRegister.password
     };
 
-    const registrame = async () => {
+    setMessage("");
+    let errorMessage = checkError(dataRegister);
 
-        const body = {
-            name: dataRegister.name,
-            surname: dataRegister.surname,
-            email: dataRegister.email,
-            password: dataRegister.password
-        };
+    setMessage(errorMessage);
 
-        setMessage('');
-        let errorMessage = checkError(dataRegister);
+    if (errorMessage) {
+        setLoading(false);
+      return;
+    }
 
-        setMessage(errorMessage);
-
-        if(errorMessage){
-            return;
-        }
-
-        let result = await axios.post("video-rados-b.heroku.com/1/user", body);
-        console.log(result);
-
-        props.dispatch({
-            type: REGISTER,
-            payload: result
+    setTimeout(()=>{
+        axios.post("http://video-rados-b.herokuapp.com/1/user", body)
+        .then(handleResponse)
+        .catch((err)=>{
+            setLoading(false);
+            setMessage("No se ha podido realizar el registro")
         });
+    },500);
+  };
 
-        return setTimeout(() => {
-            history.push('/login')
-        }, 1000);
-    };
+  return (
+    <>
+      <Header />
+      <Loading visible={loading} />
 
-    return (
-        <>
-        <Header/>
-        <div className="register">
-            <div className="registerForm">
-                <p className="inputReg">Nombre:</p> <input className='nameInputReg' type='text' name='name' title='name' lenght='30' onChange={handleState}/>
-                <p className="inputReg">Apellidos:</p> <input className='surnameInputReg' type='text' name='surname' title='surname' lenght='30' onChange={handleState}/>
-                <p className="inputReg">Email:</p> <input className='emailInputReg' type='email' name='email' title='email' lenght='30' onChange={handleState}/>
-                <p className="inputReg">Contraseña:</p> <input className='pwdInputReg' type='password' name='password' title='password' lenght='30' onChange={handleState}/>
-
-                <div className="btnReg">
-                    <button className='btnRegister' type='submit' onClick={registrame}>Darme de alta</button>
-                </div>
-            </div>
-            
+      <div className="register">
+        <div className="registerForm">
+          <p className="inputReg">Nombre:</p>{" "}
+          <input
+            className="nameInputReg"
+            type="text"
+            name="name"
+            title="name"
+            lenght="30"
+            onChange={handleState}
+          />
+          <p className="inputReg">Apellidos:</p>{" "}
+          <input
+            className="surnameInputReg"
+            type="text"
+            name="lastname"
+            title="lastname"
+            lenght="30"
+            onChange={handleState}
+          />
+          <p className="inputReg">Email:</p>{" "}
+          <input
+            className="emailInputReg"
+            type="email"
+            name="email"
+            title="email"
+            lenght="30"
+            onChange={handleState}
+          />
+          <p className="inputReg">Contraseña:</p>{" "}
+          <input
+            className="pwdInputReg"
+            type="password"
+            name="password"
+            title="password"
+            lenght="30"
+            onChange={handleState}
+          />
+          <div className="btnReg">
+            <MyButton nombre="Darme de alta" action={registrame} />
+            <div className='errorMessage'> {message} </div>
+          </div>
         </div>
-        <Footer/>
-        </>
-    );
+      </div>
+      <Footer />
+    </>
+  );
 };
 
-export default connect()(Register);
+export default connect(state=>({user:state.userReducer, order:state.orderReducer}))(Register);

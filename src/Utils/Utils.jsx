@@ -15,7 +15,7 @@ const checkError = (datosCheck) => {
         }
         break;
 
-      case "surname":
+      case "lastname":
         // eslint-disable-next-line
         if (datosCheck[field] === "") {
           return "El campo apellidos no puede estar vacío";

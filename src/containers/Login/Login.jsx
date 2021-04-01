@@ -63,8 +63,6 @@ const Login = (props) => {
         <Footer/>
         </>
     );
-
-    
 };
 
 export default connect(state=>({user:state.userReducer, order:state.orderReducer}))(Login);
