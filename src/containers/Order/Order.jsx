@@ -23,12 +23,14 @@ function Order(props) {
     
     const submit = async () => {
         setLoading(true);
+        let id = props.movie.id || props.movie._id;
         const body = {items: [{
-            film: props.movie.id,
+            film: id,
             rental: true,
             rentalDuration: 1
         }]}
         setTimeout(()=>{
+            // axios.post(`http://localhost:3000/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
             axios.post(`http://video-rados-b.herokuapp.com/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
             .then(handleResponse)
             .catch((err)=>{
