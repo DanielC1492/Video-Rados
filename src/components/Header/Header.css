@@ -8,6 +8,10 @@
     background-color: rgba(35,0,133,255);
 }
 
+.header p {
+    margin: 0;
+}
+
 .left { /* div del logo + desplegable de generos, parte izquierda header */
     width: 30em;
     display: flex;
@@ -29,6 +33,7 @@
 
 .genres {
     position: relative;
+    user-select: none;
 }
 
 .genres:hover .dropDown{
@@ -55,6 +60,7 @@
     flex-direction: row;
     width: 17em;
     justify-content: space-evenly;
+    padding: 0.5em 0em;
 }
 
 .center { /* div central */
