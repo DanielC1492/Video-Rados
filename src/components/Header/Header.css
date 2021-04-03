@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.a {
-    border: solid red 0.1em;
-}
-
 .header {
     height: 5em;
     display: flex;
@@ -53,4 +49,10 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+}
+
+.saludo {
+    color: rgba(253,255,60,255);
+    user-select: none;
+    cursor: pointer;
 }
