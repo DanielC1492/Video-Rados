@@ -9,6 +9,7 @@ import Header from '../../components/Header/Header';
 import MoviePoster from '../../components/MoviePoster/MoviePoster';
 import playButton from '../../img/playButton.png';
 import {ORDER} from '../../redux/types/orderTypes';
+import  Footer  from '../../components/Footer/Footer';
 
 
 
@@ -76,6 +77,7 @@ const Movie = (props) => {
            
             
         </div>
+        <Footer />
         </>
     )
 }

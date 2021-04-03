@@ -28,7 +28,33 @@
 }
 
 .genres {
+    position: relative;
+}
 
+.genres:hover .dropDown{
+    display: flex;
+}
+
+.dropDown p{
+    cursor: pointer;
+    user-select: none;
+    padding: 0.2em 0.5em;
+}
+
+.dropDown p:hover{
+    background-color: rgba(47, 5, 232, 0.748);
+}
+
+.dropDown{
+    background-color: rgba(35,0,133,255);
+    border: solid rgba(253,255,60,255) 0.1em;
+    position: absolute;
+    z-index: 99;
+    display: none;
+    
+    flex-direction: row;
+    width: 17em;
+    justify-content: space-evenly;
 }
 
 .center { /* div central */
