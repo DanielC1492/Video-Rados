@@ -4,6 +4,7 @@ const checkError = (datosCheck) => {
   for (let field in datosCheck) {
     switch (field) {
       case "name":
+      case "fullName":
         // eslint-disable-next-line
         if (datosCheck[field] === "") {
           return "El campo nombre no puede estar vacío";
@@ -78,6 +79,36 @@ const checkError = (datosCheck) => {
         }
 
         break;
+
+      case "cardNumber":
+        // eslint-disable-next-line
+        if (datosCheck[field] === "") {
+          return "El campo tarjeta de crédito no puede estar vacío";
+        }
+        if (!/^[0-9]{16}$/.test(datosCheck[field])) {
+          return "La tarjeta debe tener 16 dígitos numéricos";
+        }
+        break;  
+
+      case "expiration":
+        // eslint-disable-next-line
+        if (datosCheck[field] === "") {
+          return "El campo caducidad no puede estar vacío";
+        }
+        if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(datosCheck[field])) {
+          return "La caducidad debe ser del tipo 02/05 o 02/2005";
+        }
+        break; 
+
+      case "CVV":
+        // eslint-disable-next-line
+        if (datosCheck[field] === "") {
+          return "El campo CVV no puede estar vacío";
+        }
+        if (!/^[0-9]{3}$/.test(datosCheck[field])) {
+          return "El CVV debe tener 3 dígitos";
+        }
+        break; 
 
       default:
         break;

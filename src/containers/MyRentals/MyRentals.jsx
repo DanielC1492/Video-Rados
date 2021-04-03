@@ -61,6 +61,7 @@ const MyRentals = (props) => {
     }
 
     const now = new Date;
+    now.setFullYear(2002);
 
     return (
         <>

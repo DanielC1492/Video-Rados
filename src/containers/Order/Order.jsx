@@ -7,6 +7,7 @@ import './Order.css';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 import { DONE } from '../../redux/types/orderTypes';
+import checkError from "../../Utils/Utils";
 
 
 
@@ -21,9 +22,26 @@ function Order(props) {
     let nowString = `${now.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${now.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
     let endString = `${end.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${end.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
 
+    const [payment, setPayment] = useState({cardNumber:'',expiration:'',CVV:'',fullName:''});
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+
+    const updatePayment = (e) => {
+        setPayment({...payment, [e.target.name]: e.target.value});
+    }
     
     const submit = async () => {
+
+        
+        setMessage("");
+        let errorMessage = checkError(payment);    
+        
+        setMessage(errorMessage);
+
+        if (errorMessage) {
+          return;
+        }
+
         setLoading(true);
         let id = props.movie.id || props.movie._id;
         const body = {items: [{
@@ -65,7 +83,7 @@ function Order(props) {
                     <div className='infoText'>
                         <div className='movieName'>Usted va a alquilar: <b>{props.movie.title}</b></div>
                         <div className='orderPrice'>Precio: 2.99€/día</div>
-                        <div className='rentalTime'>Disfrutará de la película desde ahora, {nowString} hasta el {endString}</div>
+                        <div className='rentalTime'>Disfrutará de la película desde el {nowString} hasta el {endString}</div>
                     </div>
                 </div>
                 <div className='topRight'>
@@ -76,25 +94,25 @@ function Order(props) {
                 <div className='headerPayment'>Pagar con tarjeta</div>
                     <div className='cardDiv'>
                         <div className='cardText'>Tarjeta de crédito</div>
-                        <input className='cardNumber'></input>
+                        <input className='cardNumber' name='cardNumber' onChange={updatePayment}></input>
                     </div>
                 <div className='expirationCVV'>
                     <div className='expirationDiv'> 
                         <div className='expirationText'>Caducidad</div>
-                        <input className='expiration'></input>
+                        <input className='expiration' name='expiration' onChange={updatePayment}></input>
                     </div>
                     <div className='CVVDiv'>
                         <div className='CVVText'>CVV</div> 
-                        <input className='CVV'></input>
+                        <input className='CVV' name='CVV' onChange={updatePayment}></input>
                     </div>
                 </div>
                 <div className='nameDiv'>
                     <div className='nameText'>Nombre completo del titular</div> 
-                    <input className='fullName'></input>
+                    <input className='fullName' name='fullName' onChange={updatePayment}></input>
                 </div>
-                
-            <   MyButton nombre='PAGAR' action={submit}/>
+                <MyButton nombre='PAGAR' action={submit}/>
             </div>
+            <div className='errorMessage parpadea'> {message} </div>
             
 
         </div>
