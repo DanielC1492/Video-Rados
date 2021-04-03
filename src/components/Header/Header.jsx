@@ -5,6 +5,8 @@ import {useHistory} from 'react-router-dom';
 
 const Header = () => {
 
+
+
     let history = useHistory();
 
     const [query,setQuery] = useState('');
@@ -29,6 +31,10 @@ const Header = () => {
         };
     },[query]);
 
+    const genrePath = (genre) => {
+        history.push(`/genre/${encodeURI(genre)}`);
+    }
+
     return(
         <div className="header">
             <div className="left">
@@ -37,7 +43,35 @@ const Header = () => {
                 </div>
 
                 <div className="genres">
-                   <p>Géneros</p> 
+                   <p>Géneros</p>
+                        <div className='dropDown'>
+                            <div className='dropLeft'>
+                                <p onClick= {() => genrePath('Acción')}>Acción</p>
+                                <p onClick= {() => genrePath('Aventura')}>Aventura</p>
+                                <p onClick= {() => genrePath('Animación')}>Animación</p>
+                                <p onClick= {() => genrePath('Comedia')}>Comedia</p>
+                                <p onClick= {() => genrePath('Crimen')}>Crimen</p>
+                                <p onClick= {() => genrePath('Documental')}>Documental</p>
+                                <p onClick= {() => genrePath('Drama')}>Drama</p>
+                                <p onClick= {() => genrePath('Familia')}>Familia</p>
+                                <p onClick= {() => genrePath('Fantasía')}>Fantasía</p>
+                                <p onClick= {() => genrePath('Historia')}>Historia</p>
+                                 
+                            </div>
+                            <div className="dropRight">
+                                <p onClick= {() => genrePath('Terror')}>Terror</p>
+                                <p onClick= {() => genrePath('Música')}>Música</p>
+                                <p onClick= {() => genrePath('Misterio')}>Misterio</p>
+                                <p onClick= {() => genrePath('Romance')}>Romance</p>
+                                <p onClick= {() => genrePath('Ciencia ficción')}>Ciencia ficción</p>
+                                <p onClick= {() => genrePath('Película de TV')}>Película de TV</p>
+                                <p onClick= {() => genrePath('Suspense')}>Suspense</p>
+                                <p onClick= {() => genrePath('Bélica')}>Bélica</p>
+                                <p onClick= {() => genrePath('Western')}>Western</p>
+                            </div> 
+                            
+                            
+                        </div> 
                 </div>
             </div>
 
