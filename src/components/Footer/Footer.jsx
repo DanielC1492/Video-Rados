@@ -4,14 +4,15 @@ import "./Footer.css";
 
 const Footer = () => {
 
-    const hora = new Date();
+    let now = new Date();
+    now.setFullYear(2002);
 
     return(
         <div className="footer">
             <div className="leftF"></div>
             <div className="centerF">
-                <p>VIDEO RADOS name, design and related marks are trademarks of VideoRados Inc.
-                © 2000 VideoRados Inc. All rights reserved.</p>
+                <p>VIDEO RADOS name, design and related marks are trademarks of VideoRados S.L.
+                © 2000 VideoRados S.L. All rights reserved.</p>
             </div>
             <div className="rightF">
                 <div className="visitorsCounter">
@@ -22,7 +23,7 @@ const Footer = () => {
                     <div className="n5 numbers">0</div>
                 </div>
                 <div className="date">
-                    <p>27 de Diciembre de 2002 {hora.toLocaleTimeString("es-es", {hour:"numeric", minute:"numeric"})} h</p>
+                    <p>{now.toLocaleDateString('es-es',{day:'numeric',month:'long',year:'numeric'})} {now.toLocaleTimeString("es-es", {hour:"numeric", minute:"numeric"})} h</p>
                 </div>
             </div>
         </div>

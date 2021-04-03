@@ -73,14 +73,16 @@ const MyRentals = (props) => {
                     const movie = order.items[0]?.film;
                     let moviePoster;
                     if (movie.poster_path=='https://image.tmdb.org/t/p/w185null')
-                    moviePoster = <MoviePoster index={i} title={movie.title} onClick={clickHandler}></MoviePoster>
+                    moviePoster = <MoviePoster index={i} title={movie.title} onClick={()=>{}}></MoviePoster>
                     else
-                    moviePoster = <MoviePoster index={i} src={movie.poster_path} onClick={clickHandler}></MoviePoster>;
+                    moviePoster = <MoviePoster index={i} src={movie.poster_path} onClick={()=>{}}></MoviePoster>;
                     let date = new Date(order.createdAt);
+                    date.setFullYear(2002);
                     let rentalDuration = order.items[0]?.rentalDuration || 1;
                     let dateString = `${date.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${date.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
                     let expiration = new Date(order.createdAt);
                     expiration.setDate(expiration.getDate() + rentalDuration);
+                    expiration.setFullYear(2002);
                     let dateString2 = `${expiration.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${expiration.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
                     let action;
                     if (!admin)

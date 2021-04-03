@@ -16,6 +16,8 @@ function Order(props) {
     const now = new Date();
     const end = new Date();
     end.setDate(end.getDate() + 1);
+    now.setFullYear(2002);
+    end.setFullYear(2002);
     let nowString = `${now.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${now.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
     let endString = `${end.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${end.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
 
@@ -61,9 +63,9 @@ function Order(props) {
                 <div className='topLeft'><img className='topLeft' src={props.movie.poster_path_hd} alt={props.movie.poster_path}></img></div>
                 <div className='topMid'>
                     <div className='infoText'>
-                        <div className='movieName'>Usted va a alquilar:{props.movie.title}</div>
-                        <div className='orderPrice'>Precio: 3€/día</div>
-                        <div className='rentalTime'>Disfrutará de la película desde el {nowString} hasta el {endString}</div>
+                        <div className='movieName'>Usted va a alquilar: <b>{props.movie.title}</b></div>
+                        <div className='orderPrice'>Precio: 2.99€/día</div>
+                        <div className='rentalTime'>Disfrutará de la película desde ahora, {nowString} hasta el {endString}</div>
                     </div>
                 </div>
                 <div className='topRight'>
@@ -71,7 +73,7 @@ function Order(props) {
                 </div>
             </div>
             <div className='mid'>
-                <div className='headerPayment'>Tarjeta</div>
+                <div className='headerPayment'>Pagar con tarjeta</div>
                     <div className='cardDiv'>
                         <div className='cardText'>Tarjeta de crédito</div>
                         <input className='cardNumber'></input>
@@ -90,9 +92,10 @@ function Order(props) {
                     <div className='nameText'>Nombre completo del titular</div> 
                     <input className='fullName'></input>
                 </div>
+                
+            <   MyButton nombre='PAGAR' action={submit}/>
             </div>
             
-            <MyButton nombre='PAGAR' action={submit}/>
 
         </div>
 

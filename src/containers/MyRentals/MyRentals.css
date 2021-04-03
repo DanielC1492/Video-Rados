@@ -32,6 +32,10 @@
     height: 11.4em;
 }
 
+.rentals .posterDiv {
+    cursor: auto;
+}
+
 .rentals .card .cardData {
     display:flex;
     justify-content: space-around;
