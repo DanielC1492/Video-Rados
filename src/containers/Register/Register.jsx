@@ -13,6 +13,7 @@ import Loading from "../../components/Loading/Loading";
 
 
 const Register = (props) => {
+
   let history = useHistory();
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +42,9 @@ const Register = (props) => {
   };
 
   const registrame = async () => {
-      setLoading(true);
+
+    setLoading(true);
+
     const body = {
       name: dataRegister.name,
       lastname: dataRegister.lastname,

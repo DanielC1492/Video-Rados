@@ -16,6 +16,7 @@
 
 .input {
     color: #FFF503;
+    margin-bottom: -0.1em;
 }
 
 .emailInput {
@@ -29,3 +30,4 @@
     background-color: lightgrey;
     margin-bottom: 1.5em;
 }
+    
