@@ -4,12 +4,14 @@ import "./Footer.css";
 
 const Footer = () => {
 
+    const hora = new Date();
+
     return(
         <div className="footer">
             <div className="leftF"></div>
             <div className="centerF">
                 <p>VIDEO RADOS name, design and related marks are trademarks of VideoRados Inc.
-                © 2000 VideoRados Inc. All rights reserved. Privacy ProtectionTerms & Conditions</p>
+                © 2000 VideoRados Inc. All rights reserved.</p>
             </div>
             <div className="rightF">
                 <div className="visitorsCounter">
@@ -20,7 +22,7 @@ const Footer = () => {
                     <div className="n5 numbers">0</div>
                 </div>
                 <div className="date">
-                    <p>27 de Diciembre de 2002 10:15h</p>
+                    <p>27 de Diciembre de 2002 {hora.toLocaleTimeString("es-es", {hour:"numeric", minute:"numeric"})} h</p>
                 </div>
             </div>
         </div>
