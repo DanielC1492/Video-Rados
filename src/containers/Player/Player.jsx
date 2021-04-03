@@ -23,7 +23,7 @@ const Player = (props) => {
     return (
         <>
             <Loading visible={loading}/>
-            <div className={`errorOverlay ${classes}`}><span>Se ha producido un error. Por favor actualice su navegador a Netscape 7 o Internet Explorer 6.0.</span></div>
+            <div className={`errorOverlay ${classes}`}><span>Se ha producido un error. - ERR69420: Unsupported hardware/software. <br/> Nuestro sistema de reproducción audiovisual telemática está diseñado para sistemas Pentium con Windows 95 / NT e Internet Explorer 6.0.<br/>Por favor utilice un terminal compatible.</span></div>
             <div className="overlay">
                 <div className="blackbar">
                     <span>Estás viendo: {props.match.params.title}</span>
