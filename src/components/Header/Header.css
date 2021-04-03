@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.a {
-    border: solid red 0.1em;
-}
-
 .header {
     height: 5em;
     display: flex;
@@ -55,9 +51,8 @@
     align-items: center;
 }
 
-.logoutIcon {
-    height: 2.5em;
-    width: 2.5em;
-    background-image: url("/src/img/logout.png");
+.saludo {
+    color: rgba(253,255,60,255);
+    user-select: none;
     cursor: pointer;
 }
