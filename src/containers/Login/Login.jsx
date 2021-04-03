@@ -14,52 +14,6 @@ import checkError from "../../Utils/Utils";
 const Login = (props) => {
     
     let history = useHistory();
-    // const [loading, setLoading] = useState(false);
-
-    const [dataLogin, setLogin] = useState({
-        email: "",
-        password: ""
-      });
-
-    const [message, setMessage] = useState("");
-
-    const handleState = (event) => {
-        setLogin({
-          ...dataLogin,
-          [event.target.name]: event.target.value,
-        });
-      };
-
-    const logueame = async () => {
-
-        setLoading(true);
-
-        const body = {
-            email: dataLogin.email,
-            password: dataLogin.password
-          };
-
-        setMessage("");
-        let errorMessage = checkError(dataLogin);    
-        
-        setMessage(errorMessage);
-
-        if (errorMessage) {
-            setLoading(false);
-          return;
-        }
-
-        setTimeout(()=>{
-            axios.post("http://video-rados-b.herokuapp.com/1/login", body)
-            .then(handleResponse)
-            .catch((err)=>{
-                setLoading(false);
-                setMessage("No se ha podido realizar el logueo")
-            });
-        },500);
-
-    };
-
     
     const cred = props.user;
     if (cred.user?._id)
@@ -73,17 +27,37 @@ const Login = (props) => {
         setCredentials({...credentials, [e.target.name]: e.target.value});
     }
 
-    const submit = async () => {
+    const [message, setMessage] = useState("");
+
+    const logueame = async () => {
+
         setLoading(true);
+
+        const body = {
+            email: credentials.email,
+            password: credentials.password
+          };
+
+        setMessage("");
+        let errorMessage = checkError(credentials);    
+        
+        setMessage(errorMessage);
+
+        if (errorMessage) {
+            setLoading(false);
+          return;
+        }
+
         setTimeout(()=>{
-            axios.post('http://video-rados-b.herokuapp.com/1/user/login',credentials)
+            axios.post("http://video-rados-b.herokuapp.com/1/user/login", body)
             .then(handleResponse)
             .catch((err)=>{
                 setLoading(false);
-                console.log(err.message)
+                setMessage("No se ha podido realizar el logueo")
             });
         },500);
-    }
+
+    };
 
     const handleResponse = (response) => {
         if (response.status == 200) {
@@ -105,8 +79,12 @@ const Login = (props) => {
             <div className="formLogin">
                 <p className="input">Email:</p> <input className='emailInput' type='email' name='email' title='email' onChange={updateCredentials} lenght='30'/>
                 <p className="input">Contraseña:</p> <input className='pwdInput' type='password' name='password' title='password' onChange={updateCredentials} lenght='30'/>
-                <MyButton nombre="Entrar" onClick={logueame} action={submit}/>
-                <div className='errorMessage'> {message} </div>
+                <div className="btnLog">
+                    <MyButton nombre="Entrar"  action={logueame}/>
+                    <div className='errorMessage'> {message} </div>
+                    <p className="pregunta" onClick={() => history.push("/register")}> ¿Todavia no estás dado de alta? Registrate aquí !</p>
+
+                </div>                
             </div>
         </div>
         <Footer/>

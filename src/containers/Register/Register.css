@@ -58,4 +58,5 @@
 .errorMessage {
     color: rgb(255, 166, 0);
     font-weight: bold;
+    height: 3em;
 }

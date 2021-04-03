@@ -8,26 +8,53 @@
 }
 
 .formLogin {
-    width: 25m;
+    width: 30em;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .input {
     color: #FFF503;
     margin-bottom: -0.1em;
+    text-align: left;
+    width: 18em;
 }
 
 .emailInput {
-    width: 20em;
+    width: 18em;
     background-color: lightgrey;
     margin-bottom: 1.5em;
 }
 
 .pwdInput {
-    width: 20em;
+    width: 18em;
     background-color: lightgrey;
     margin-bottom: 1.5em;
 }
-    
+
+.btnLog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pregunta {
+    text-align: center;
+    font-weight: normal;
+    color: #FFF503;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pregunta:hover {
+    text-decoration: underline;
+}
+
+.errorMessage {
+    height: 1.5em;
+    color: rgb(255, 166, 0);
+    font-weight: bold;
+}
