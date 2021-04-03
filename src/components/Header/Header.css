@@ -29,6 +29,7 @@
     font-family: 'Fredoka One', cursive;
     cursor:pointer;
     user-select: none;
+    color: rgba(253,255,60,255);
 }
 
 .genres {

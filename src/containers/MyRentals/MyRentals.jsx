@@ -52,7 +52,7 @@ const MyRentals = (props) => {
     }
     
     const clickHandler = (i)=>{
-        history.push('/player')
+        history.push(`/player/${encodeURI(rentals[i].items[0]?.film?.title)}`)
     }
     
     const rentAgain = (i)=>{
