@@ -79,45 +79,17 @@ const Register = (props) => {
 
       <div className="register">
         <div className="registerForm">
-          <p className="inputReg">Nombre:</p>{" "}
-          <input
-            className="nameInputReg"
-            type="text"
-            name="name"
-            title="name"
-            lenght="30"
-            onChange={handleState}
-          />
-          <p className="inputReg">Apellidos:</p>{" "}
-          <input
-            className="surnameInputReg"
-            type="text"
-            name="lastname"
-            title="lastname"
-            lenght="30"
-            onChange={handleState}
-          />
+          <p className="inputReg">Nombre:</p>{" "} 
+          <input className="nameInputReg" type="text" name="name" title="name" lenght="30" onChange={handleState} />
+          <p className="inputReg">Apellidos:</p>{" "} 
+          <input className="surnameInputReg" type="text" name="lastname" title="lastname" lenght="30" onChange={handleState} />
           <p className="inputReg">Email:</p>{" "}
-          <input
-            className="emailInputReg"
-            type="email"
-            name="email"
-            title="email"
-            lenght="30"
-            onChange={handleState}
-          />
+          <input className="emailInputReg" type="email" name="email" title="email" lenght="30" onChange={handleState} />
           <p className="inputReg">Contraseña:</p>{" "}
-          <input
-            className="pwdInputReg"
-            type="password"
-            name="password"
-            title="password"
-            lenght="30"
-            onChange={handleState}
-          />
+          <input className="pwdInputReg" type="password" name="password" title="password" lenght="30" onChange={handleState} />
           <div className="btnReg">
             <MyButton nombre="Darme de alta" action={registrame} />
-            <div className='errorMessage'> {message} </div>
+            <div className='errorMessage parpadea'> {message} </div>
           </div>
         </div>
       </div>

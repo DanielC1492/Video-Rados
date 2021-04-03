@@ -81,7 +81,7 @@ const Login = (props) => {
                 <p className="input">Contraseña:</p> <input className='pwdInput' type='password' name='password' title='password' onChange={updateCredentials} lenght='30'/>
                 <div className="btnLog">
                     <MyButton nombre="Entrar"  action={logueame}/>
-                    <div className='errorMessage'> {message} </div>
+                    <div className='errorMessage parpadea'> {message} </div>
                     <p className="pregunta" onClick={() => history.push("/register")}> ¿Todavia no estás dado de alta? Registrate aquí !</p>
 
                 </div>                

@@ -54,3 +54,10 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.logoutIcon {
+    height: 2.5em;
+    width: 2.5em;
+    background-image: url("/src/img/logout.png");
+    cursor: pointer;
+}
