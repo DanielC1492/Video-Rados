@@ -67,7 +67,6 @@ const Login = (props) => {
             else history.push('/profile');
         } else {
             setLoading(false);
-            console.log(response.data.message);
         }
     }
 
