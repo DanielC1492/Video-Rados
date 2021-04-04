@@ -1,5 +1,6 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Popup from './components/Popup/Popup';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Movie from './containers/Movie/Movie';
@@ -14,6 +15,7 @@ import ScrollToTop from './Utils/ScrollToTop';
 function App() {
   return (
     <div className="App">
+      <Popup/>
       <BrowserRouter>
         <ScrollToTop/>
         <Switch>

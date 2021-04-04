@@ -80,7 +80,6 @@ const MyRentals = (props) => {
                     let date = new Date(order.createdAt);
                     date.setFullYear(2002);
                     let rentalDuration = order.items[0]?.rentalDuration || 1;
-                    console.log(rentalDuration)
                     let dateString = `${date.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${date.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
                     let expiration = new Date(order.createdAt);
                     expiration.setDate(expiration.getDate() + rentalDuration);

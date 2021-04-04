@@ -119,7 +119,7 @@ function Order(props) {
                 </div>
             </div>
             <div className='mid'>
-                <div className='headerPayment'>Pagar con tarjeta</div>
+                <div className='headerPayment'>Pagar {payment.price.toFixed(2)}€ con tarjeta</div>
                     <div className='cardDiv'>
                         <div className='cardText'>Tarjeta de crédito</div>
                         <input className='cardNumber' name='cardNumber' onChange={updatePayment}></input>
