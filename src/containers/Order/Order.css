@@ -31,6 +31,45 @@
     cursor: auto;
 }
 
+.durationInput {
+    width:2.2em;
+    height:1.7em;
+    text-align: center;
+}
+
+.rentalDuration {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rentalDuration span {
+    margin: 0 .6em;
+}
+
+.orderPrice .discount {
+    color: rgb(206, 35, 35);
+    font-weight: 500;
+}
+
+.rentalDuration .Days {
+    width:2em;
+    text-align: left;
+}
+
+.rentalDuration .increment {
+    display:inline-block;
+    width:1em;
+    height: 1.5em;
+    background-color: rgb(35,0,133);
+    border: 1px solid rgb(253,255,60);
+    color:rgb(253,255,60);
+    box-sizing: content-box;
+    line-height: 1.3em;
+    cursor: pointer;
+    user-select: none;
+}
+
 .topMid{
     height: 15em;
     width: 45em;

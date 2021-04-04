@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header/Header';
@@ -15,21 +15,33 @@ import MoviePoster from '../../components/MoviePoster/MoviePoster';
 function Order(props) {
 
     const history = useHistory();
+
+    const [payment, setPayment] = useState({price:2.99,rentalDuration:1,cardNumber:'',expiration:'',CVV:'',fullName:''});
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+    const [discount, setDiscount] = useState('');
+
     const now = new Date();
     const end = new Date();
-    end.setDate(end.getDate() + 1);
+    end.setDate(end.getDate() + payment.rentalDuration);
     now.setFullYear(2002);
     end.setFullYear(2002);
     let nowString = `${now.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${now.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
     let endString = `${end.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${end.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
 
-    const [payment, setPayment] = useState({cardNumber:'',expiration:'',CVV:'',fullName:''});
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
-
     const updatePayment = (e) => {
-        setPayment({...payment, [e.target.name]: e.target.value});
+        setPayment({...payment, [e.target.name]: (e.target.name==="rentalDuration")?(e.target.value==='' || isNaN(e.target.value) || parseInt(e.target.value)<1)?1:parseInt(e.target.value):e.target.value});
     }
+
+    useEffect(()=>{
+        setPayment({...payment,price:(2.99*payment.rentalDuration*(0.5+0.5**(payment.rentalDuration)))});
+    },[payment.rentalDuration]);
+
+    useEffect(()=>{
+        const disc = (100*(1-payment.price/(2.99*payment.rentalDuration))).toFixed(0);
+        if (disc > 0) setDiscount(`-${disc}%`);
+        else setDiscount('');
+    },[payment.price]);
     
     const submit = async () => {
 
@@ -48,7 +60,8 @@ function Order(props) {
         const body = {items: [{
             film: id,
             rental: true,
-            rentalDuration: 1
+            rentalDuration: payment.rentalDuration,
+            price: payment.price
         }]}
         setTimeout(()=>{
             // axios.post(`http://localhost:3000/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
@@ -56,7 +69,8 @@ function Order(props) {
             .then(handleResponse)
             .catch((err)=>{
                 setLoading(false);
-                console.log(err.message)
+                console.log(err.message);
+                setMessage('No se ha podido realizar el alquiler. Por favor inténtelo otra vez.');
             });
         },500);
     }
@@ -69,6 +83,7 @@ function Order(props) {
         } else {
             setLoading(false);
             console.log(response.data.message);
+            setMessage('No se ha podido realizar el alquiler. Por favor inténtelo otra vez.');
         }
     }
 
@@ -88,8 +103,15 @@ function Order(props) {
                 <div className='topMid'>
                     <div className='infoText'>
                         <div className='movieName'>Usted va a alquilar: <b>{props.movie.title}</b></div>
-                        <div className='orderPrice'>Precio: 2.99€/día</div>
-                        <div className='rentalTime'>Disfrutará de la película desde el {nowString} hasta el {endString}</div>
+                        <div className='rentalDuration'>
+                            <span>Durante: </span>
+                            <div className="increment" onClick={()=>updatePayment({target:{name:'rentalDuration',value:payment.rentalDuration-1}})}>-</div>
+                            <input className="durationInput" name="rentalDuration" onChange={updatePayment} value={payment.rentalDuration}></input>
+                            <div className="increment" onClick={()=>updatePayment({target:{name:'rentalDuration',value:payment.rentalDuration+1}})}>+</div>
+                            <span className="Days">{(parseInt(payment.rentalDuration)>1)?'días':'día'}</span>
+                        </div>
+                        <div className='orderPrice'>Precio: <b>{payment.price.toFixed(2)}€</b> (<b>{(payment.price/payment.rentalDuration).toFixed(2)}€/día</b>) <span className='discount'>{discount}</span></div>
+                        <div className='rentalTime'>Disfrutará de la película desde el {nowString} hasta el <b>{endString}</b></div>
                     </div>
                 </div>
                 <div className='topRight'>

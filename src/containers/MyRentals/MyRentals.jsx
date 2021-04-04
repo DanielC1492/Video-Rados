@@ -80,6 +80,7 @@ const MyRentals = (props) => {
                     let date = new Date(order.createdAt);
                     date.setFullYear(2002);
                     let rentalDuration = order.items[0]?.rentalDuration || 1;
+                    console.log(rentalDuration)
                     let dateString = `${date.toLocaleDateString('es-es',{day:'numeric', month:'numeric', year:'numeric'})} a las ${date.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
                     let expiration = new Date(order.createdAt);
                     expiration.setDate(expiration.getDate() + rentalDuration);
@@ -105,9 +106,9 @@ const MyRentals = (props) => {
                                 </div>
                                 <div className="data">
                                     <div className="datum">Alquilada el {dateString}</div>
-                                    <div className="datum">Alquilada por {rentalDuration} días</div>
+                                    <div className="datum">Alquilada por {rentalDuration} {rentalDuration===1?'día':'días'}</div>
                                     <div className="datum">Caduca el {dateString2}</div>
-                                    <div className="datum">Precio: {order.total}{order.currency} ({movie.pricePerDay}{order.currency} /día)</div>
+                                    <div className="datum">Precio: {order.total.toFixed(2)}{order.currency} ({(order.total/rentalDuration).toFixed(2)}{order.currency} /día)</div>
                                 </div>
                                     {action}
                             </div>
