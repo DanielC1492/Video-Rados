@@ -8,6 +8,7 @@ import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 import { DONE } from '../../redux/types/orderTypes';
 import checkError from "../../Utils/Utils";
+import MoviePoster from '../../components/MoviePoster/MoviePoster';
 
 
 
@@ -71,6 +72,11 @@ function Order(props) {
         }
     }
 
+    let moviePoster;
+    if (props.movie?.poster_path==='https://image.tmdb.org/t/p/w185null')
+    moviePoster = <MoviePoster title={props.movie?.title} onClick={()=>{}}></MoviePoster>
+    else
+    moviePoster = <MoviePoster src={props.movie?.poster_path} onClick={()=>{}}></MoviePoster>;
 
     return (
         <>
@@ -78,7 +84,7 @@ function Order(props) {
         <div className='orderContainer'>
             <Loading visible={loading} />
             <div className='top'>
-                <div className='topLeft'><img className='topLeft' src={props.movie.poster_path_hd} alt={props.movie.poster_path}></img></div>
+                <div className='topLeft'>{moviePoster}</div>
                 <div className='topMid'>
                     <div className='infoText'>
                         <div className='movieName'>Usted va a alquilar: <b>{props.movie.title}</b></div>

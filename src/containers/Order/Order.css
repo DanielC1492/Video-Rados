@@ -25,6 +25,12 @@
     background-color: brown;
 }
 
+.topLeft .posterDiv {
+    width:100%;
+    height:100%;
+    cursor: auto;
+}
+
 .topMid{
     height: 15em;
     width: 45em;

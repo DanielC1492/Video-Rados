@@ -70,6 +70,12 @@ const Movie = (props) => {
         
     }
 
+    let moviePoster;
+    if (props.movie?.poster_path==='https://image.tmdb.org/t/p/w185null')
+    moviePoster = <MoviePoster title={props.movie?.title} onClick={()=>{}}></MoviePoster>
+    else
+    moviePoster = <MoviePoster src={props.movie?.poster_path} onClick={()=>{}}></MoviePoster>;
+
     return (
         <>
         <Header/>
@@ -104,8 +110,7 @@ const Movie = (props) => {
             <div className='midRight'>
                 <div className='midRightTop'>
                     
-                    <div className='poster'><img className='posterImg' src={props.movie?.poster_path_hd} alt={props.movie?.title}></img>
-                    </div>
+                    <div className='poster'>{moviePoster}</div>
                     <div className='movieInfo'>
                         <div className='movieName'><b>Nombre: {props.movie?.title}</b></div>
                         <div className='genre'><b>Géneros:</b> {props.movie?.genres?.join(', ')}</div>

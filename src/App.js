@@ -9,11 +9,13 @@ import Player from './containers/Player/Player';
 import Profile from './containers/Profile/Profile';
 import Register from './containers/Register/Register';
 import Search from './containers/Search/Search';
+import ScrollToTop from './Utils/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop/>
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/movie' exact component={Movie}/>
