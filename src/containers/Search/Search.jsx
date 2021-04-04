@@ -25,14 +25,14 @@ const Search = (props) => {
             setMovies([]);
             setLoading(true);
             setNextPage(1);
-            setUrl(`http://video-rados-b.herokuapp.com/1/movie?query=${props.match.params.query}`);
+            setUrl(`https://video-rados-b.herokuapp.com/1/movie?query=${props.match.params.query}`);
         }
         else if (props.match.params.genre) {
             setTitle(`Películas de ${props.match.params.genre}`);
             setMovies([]);
             setLoading(true);
             setNextPage(1);
-            setUrl(`http://video-rados-b.herokuapp.com/1/movie?genre=${props.match.params.genre}`);
+            setUrl(`https://video-rados-b.herokuapp.com/1/movie?genre=${props.match.params.genre}`);
         }
     },[props.match.params.query,props.match.params.genre])
 

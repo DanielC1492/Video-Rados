@@ -20,7 +20,7 @@ const MovieCarousel = (props) => {
     },[])
 
     const getMovies = ()=>{
-        axios.get(`http://video-rados-b.herokuapp.com/1/movie?${props.query}`)
+        axios.get(`https://video-rados-b.herokuapp.com/1/movie?${props.query}`)
         .then(res=>{
             setLoading(false);
             setMovies(res.data);

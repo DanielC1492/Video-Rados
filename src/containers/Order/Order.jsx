@@ -52,7 +52,7 @@ function Order(props) {
         }]}
         setTimeout(()=>{
             // axios.post(`http://localhost:3000/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
-            axios.post(`http://video-rados-b.herokuapp.com/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
+            axios.post(`https://video-rados-b.herokuapp.com/1/user/${props.user.user._id}/order`,body,{headers:{'authorization':'Bearer ' + props.user.token}})
             .then(handleResponse)
             .catch((err)=>{
                 setLoading(false);

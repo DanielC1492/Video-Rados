@@ -63,7 +63,7 @@ const Register = (props) => {
     }
 
     setTimeout(()=>{
-        axios.post("http://video-rados-b.herokuapp.com/1/user", body)
+        axios.post("https://video-rados-b.herokuapp.com/1/user", body)
         .then(handleResponse)
         .catch((err)=>{
             setLoading(false);

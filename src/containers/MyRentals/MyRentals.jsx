@@ -28,8 +28,8 @@ const MyRentals = (props) => {
     if (history.location.pathname.split('/')[1] == 'admin') admin = true;
 
     const fetchRentals = () => {
-        let url = `http://video-rados-b.herokuapp.com/1/user/${props.user._id}/order`;
-        if (admin) url = `http://video-rados-b.herokuapp.com/1/order`;
+        let url = `https://video-rados-b.herokuapp.com/1/user/${props.user._id}/order`;
+        if (admin) url = `https://video-rados-b.herokuapp.com/1/order`;
         setLoading(true);
         setTimeout(()=>{
             axios.get(url,{headers:{'authorization':'Bearer ' + props.token}})
