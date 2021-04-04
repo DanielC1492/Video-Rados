@@ -55,7 +55,7 @@ const Header = (props) => {
                     </div>
 
                     <div className="genres">
-                       <p>Géneros</p>
+                       <p>Géneros <small>▼</small></p>
                        <div className='dropDown'>
                             <div className='dropLeft'>
                                 <p onClick= {() => genrePath('Acción')}>Acción</p>
@@ -104,7 +104,7 @@ const Header = (props) => {
                     </div>
     
                     <div className="genres">
-                       <p>Géneros</p>
+                       <p>Géneros <small>▼</small></p>
                        <div className='dropDown'>
                             <div className='dropLeft'>
                                 <p onClick= {() => genrePath('Acción')}>Acción</p>
