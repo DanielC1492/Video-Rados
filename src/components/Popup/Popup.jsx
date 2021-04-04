@@ -6,13 +6,15 @@ import './Popup.css';
 const Popup = (props) => {
 
     const [classes,setClasses] = useState('popupContainer ');
+    const [onclick,setOnclick] = useState('popupContainer visible');
 
     useEffect(()=>{
         setTimeout(()=>{setClasses(classes+'visible')},10000);
+        setTimeout(()=>{setOnclick('popupContainer ')},11500);
     },[])
     
     return(
-        <div className={classes} onClick={()=>{setClasses('popupContainer ')}}>
+        <div className={classes} onClick={()=>{setClasses(onclick)}}>
             <img src={popup} alt="Popup" />
         </div>
     )

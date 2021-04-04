@@ -86,7 +86,7 @@ const Header = (props) => {
                 </div>
 
                 <div className="center">
-                    <input type="search" className="search" placeholder="Buscar..." onChange={(e)=>setQuery(e.target.value)} />
+                    <input type="search" className="search" placeholder="Buscar por título o actor..." onChange={(e)=>setQuery(e.target.value)} />
                 </div>
 
                 <div className="right">
@@ -135,7 +135,7 @@ const Header = (props) => {
                 </div>
     
                 <div className="center">
-                    <input type="search" className="search" placeholder="Buscar..." onChange={(e)=>setQuery(e.target.value)} />
+                    <input type="search" className="search" placeholder="Buscar por título o actor..." onChange={(e)=>setQuery(e.target.value)} />
                 </div>
     
                 <div className="right">

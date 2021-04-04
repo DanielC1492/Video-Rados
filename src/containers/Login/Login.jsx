@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Login.css";
 import { useHistory } from 'react-router-dom';
 import MyButton from "../../components/MyButton/MyButton";
@@ -22,12 +22,23 @@ const Login = (props) => {
 
     const [credentials, setCredentials] = useState({email:'',password:''});
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
     const updateCredentials = (e) => {
         setCredentials({...credentials, [e.target.name]: e.target.value});
     }
 
-    const [message, setMessage] = useState("");
+    useEffect(()=>{
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                logueame();
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+            document.removeEventListener("keydown", listener);
+        };
+    },[credentials]);
 
     const logueame = async () => {
 

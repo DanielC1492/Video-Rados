@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Register.css";
 import { useHistory } from "react-router-dom";
 import Header from "../../components/Header/Header";
@@ -25,6 +25,18 @@ const Register = (props) => {
   });
 
   const [message, setMessage] = useState("");
+
+  useEffect(()=>{
+    const listener = event => {
+        if (event.code === "Enter" || event.code === "NumpadEnter") {
+            registrame();
+        }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+        document.removeEventListener("keydown", listener);
+    };
+  },[dataRegister]);
 
   const handleState = (event) => {
     setRegister({
