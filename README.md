@@ -24,17 +24,16 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
 The purpose of this project is to prove our skills with react, redux and a MongoDB based database.
+
+Our team tried to evoke a retro style website.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -45,6 +44,10 @@ LINK AQUI AMIGOS
 
 
 ## 🎈 Usage <a name="usage"></a>
+
+This is the front-end side of a project wich backend you can find in this repo.
+
+https://github.com/fbgoode/video-rados-b
 
 As a client, you can search movies by genre,name or actor name. Also you can login and see all your previous rents and pending aswell.
 
