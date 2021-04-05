@@ -1,0 +1,90 @@
+.login {
+    background-color: rgba(24,4,255,255);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.formLogin {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    color: #FFF503;
+    margin-bottom: -0.1em;
+    text-align: left;
+    width: 18em;
+}
+
+.emailInput {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.pwdInput {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.btnLog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pregunta {
+    text-align: center;
+    font-weight: normal;
+    color: #FFF503;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pregunta:hover {
+    text-decoration: underline;
+}
+
+.errorMessage {
+    height: 1.5em;
+    color: rgb(255, 166, 0);
+    font-weight: bold;
+}
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @-moz-keyframes parpadeo{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+  
+  @-webkit-keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+  }
+  
+  @keyframes parpadeo {  
+    0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }

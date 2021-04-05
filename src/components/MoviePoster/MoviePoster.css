@@ -1,0 +1,12 @@
+.posterDiv{
+    width: 12.5em;
+    height: 19em;
+    background-color: rgb(5, 27, 77);
+    color: #FFF;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    cursor:pointer;
+    padding: 5em .5em 0 .5em;
+}

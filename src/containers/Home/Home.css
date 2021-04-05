@@ -1,0 +1,48 @@
+.homeDiv{
+    flex: 0 1 auto;
+    padding: 0 1.5em;
+    background-color: rgba(24,4,255,255);
+}
+
+.homeDiv h4 {
+    color: #FFF503;
+    text-align:left;
+    margin-top:2em;
+}
+
+.homeDiv h3 {
+    color: #FFF503;
+    margin-top:2em;
+    margin-bottom:-.5em;
+}
+
+.homeDiv .spacer {
+    height:4em;
+}
+
+.banner {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fcfefc;
+    margin:0 -1.5em;
+}
+
+.banner a {
+    font-weight:bold;
+}
+
+.banner .gif {
+    width:5.5em;
+    height:5.5em;
+}
+
+.banner .gif img {
+    width:100%;
+}
+
+/*
+azul oscuro: rgba(35,0,133,255);
+amarillo: rgba(253,255,60,255);
+azul claro: rgba(24,4,255,255):
+ */

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+.footer {
+    height: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(35,0,133,255);
+}
+
+.leftF { /* vacio de momento, puede ser que en un futuro albergue algun tipo de publicidad o gif */
+    width: 30em;    
+}
+
+.centerF { /* div central */
+    width: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(253,255,60,255);
+    margin-top: 1em;
+    user-select: none;
+}
+
+.rightF { /*div con el contador y la fecha, parte derecha footer */
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.visitorsCounter {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5em;
+    background-color: rgb(143, 134, 134);
+    margin-top: 0.5em;
+    border: solid black 0.01em;
+}
+
+.numbers {
+    margin: 0.15em;
+}
+
+.date {
+    color: rgba(253,255,60,255);
+    font-size: 0.8em;
+    user-select: none;
+}

@@ -1,0 +1,92 @@
+.register {
+    background-color: rgba(24,4,255,255);
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    align-items: center;
+    font-weight: bold;
+}
+
+.registerForm {
+    width: 30em;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+.inputReg {
+    color: #FFF503;
+    text-align: left;
+    width: 18em;
+    margin-bottom: -0.1em;
+}
+
+.nameInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.surnameInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.emailInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.pwdInputReg {
+    width: 18em;
+    background-color: lightgrey;
+    margin-bottom: 1.5em;
+}
+
+.btnReg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.errorMessage {
+    color: rgb(255, 166, 0);
+    font-weight: bold;
+    height: 3em;
+}
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @-moz-keyframes parpadeo{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+  
+  @-webkit-keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+  }
+  
+  @keyframes parpadeo {  
+    0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }

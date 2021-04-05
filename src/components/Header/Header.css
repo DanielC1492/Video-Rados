@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.header {
+    height: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(35,0,133,255);
+}
+
+.header p {
+    margin: 0;
+}
+
+.left { /* div del logo + desplegable de generos, parte izquierda header */
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    color: rgba(253,255,60,255);
+    padding-left:1.5em;
+}
+
+.logo {
+    height: 1.5em;
+    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Fredoka One', cursive;
+    cursor:pointer;
+    user-select: none;
+    color: rgba(253,255,60,255);
+}
+
+.genres {
+    position: relative;
+    user-select: none;
+}
+
+.genres:hover .dropDown{
+    display: flex;
+}
+
+.dropDown p{
+    cursor: pointer;
+    user-select: none;
+    padding: 0.2em 0.5em;
+}
+
+.dropDown p:hover{
+    background-color: rgba(47, 5, 232, 0.748);
+}
+
+.dropDown{
+    background-color: rgba(35,0,133,255);
+    border: solid rgba(253,255,60,255) 0.1em;
+    position: absolute;
+    z-index: 99;
+    display: none;
+    
+    flex-direction: row;
+    width: 17em;
+    justify-content: space-evenly;
+    padding: 0.5em 0em;
+}
+
+.center { /* div central */
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 1.5em;
+}
+
+.search { /* barra de busqueda */
+    background-color: lightgrey;
+    width: 100%;
+}
+
+.right { /*div con los botones, parte derecha header */
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right:1.5em;
+}
+
+.saludo {
+    color: rgba(253,255,60,255);
+    user-select: none;
+    cursor: pointer;
+}

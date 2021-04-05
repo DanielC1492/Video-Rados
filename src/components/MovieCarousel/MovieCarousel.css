@@ -1,0 +1,14 @@
+.movieCarousel{
+    position:relative;
+    height:20.5em;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    box-sizing: content-box;
+    background-color: rgb(35,0,133);
+    padding:1em;
+}
+
+.movieCarousel .posterDiv {
+    margin-right: 1em;
+}
