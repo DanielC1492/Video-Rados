@@ -22,25 +22,26 @@
 
 ## 📝 Table of Contents
 
-- [About](#about)
 - [Getting Started](#getting_started)
+- [About](#about)
 - [Usage](#usage)
 - [Built Using](#built_using)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
-
-## 🧐 About <a name = "about"></a>
-
-The purpose of this project is to prove our skills with react, redux and a MongoDB based database.
-
-Our team tried to evoke a retro style website.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 To open this project all you need is to click in the link below.
 
 
-LINK AQUI AMIGOS
+https://videoclubrados.herokuapp.com
+
+
+## 🧐 About <a name = "about"></a>
+
+The purpose of this project is to prove our skills with react, redux and a MongoDB based database.
+
+Our team tried to evoke a retro style website as a tribute to legendary Video Store Rados from Valencia, Spain.
 
 
 ## 🎈 Usage <a name="usage"></a>
